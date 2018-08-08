@@ -6,7 +6,7 @@ import time
 
 def photo():    #read and capturedimage through camera and save it in "os.path.join(img_saving_base,filename)"
     img_saving_base = "../image/camera"     #the address of the saved image
-    camera = cv2.VideoCapture(1)    #open the webcam
+    camera = cv2.VideoCapture(0)    #open the webcam
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()      #read the captured the image
@@ -91,7 +91,7 @@ while True:
     print(endTime)
     if (endTime - startTime) % 10 == 0:
         photo()
-        filename = "../image/sample/detected_vibrio.jpg" #"../image/camera/real.jpg""detected_vibrio.jpg" "camera.jpg"
+        filename = "../image/camera/real.jpg" #"../image/camera/real.jpg""detected_vibrio.jpg" "camera.jpg"
         img = cv2.imread(filename)  #open and read the image
         distance(img)   #process the image
 
