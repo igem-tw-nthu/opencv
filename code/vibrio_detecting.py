@@ -4,18 +4,18 @@ import os
 import matplotlib.pyplot as plt     #show the image
 import time
 
-def photo():    #透過相機讀取影像並存入 "os.path.join(img_saving_base,filename)" 路徑中
-    img_saving_base = r"C:\Users\張傳佳\Desktop\課外專業\iGEM國際基因工程競賽\DryLab\MV-kit\影像辨識"     #the address of the saved image
+def photo():    #read and capturedimage through camera and save it in "os.path.join(img_saving_base,filename)"
+    img_saving_base = "../image/camera"     #the address of the saved image
     camera = cv2.VideoCapture(1)    #open the webcam
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()      #read the captured the image
-    filename = "camera.jpg"    #the name of the saved image
-    cv2.imwrite(filename, frame)      #save the captured image
+    filename = "real.jpg"    #the name of the saved image
+    cv2.imwrite(os.path.join(img_saving_base, filename), frame)      #save the captured image
     camera.release()    #close the webcam
 
-    plt.imshow(frame)
-    plt.show()
+    #plt.imshow(frame)
+    #plt.show()
 
 def distance(img):
 
@@ -39,13 +39,13 @@ def distance(img):
     # erosion and dilation
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(4,7))
 
-    plt.imshow(kernel)
-    plt.show()
+    #plt.imshow(kernel)
+    #plt.show()
 
     img_dilate = cv2.dilate(img_result, kernel, iterations = 1)   #dilate the filetered part (unknown)
 
-    plt.imshow(img_dilate)
-    plt.show();
+    #plt.imshow(img_dilate)
+    #plt.show();
 
     # change to binary (0 or 255)
     th, img_binary = cv2.threshold(img_dilate[:,:,0], 1, 255, cv2.THRESH_BINARY)
@@ -73,15 +73,16 @@ def distance(img):
     #calculate the distance between two circles
     print(led_distance)
 
-    plt.imshow(img) #show the image
-    plt.show()
+    #plt.imshow(img) #show the image
+    #plt.show()
 
     # cv2.imshow('img', img)  #something wrong to close this kind of picture
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
     filename = "detected_" + str(int(time.time())) +".jpg"  #the name of the processed image
-    cv2.imwrite(filename, img)  #save the processed image
+    img_saving_base = "../image/process"
+    cv2.imwrite(os.path.join(img_saving_base, filename), img)  #save the processed image
 
 startTime = int(time.time())
 print(startTime)
@@ -90,8 +91,8 @@ while True:
     print(endTime)
     if (endTime - startTime) % 10 == 0:
         photo()
-        filename = "real_1.jpg" #"detected_vibrio.jpg" "camera.jpg"
+        filename = "../image/sample/detected_vibrio.jpg" #"../image/camera/real.jpg""detected_vibrio.jpg" "camera.jpg"
         img = cv2.imread(filename)  #open and read the image
         distance(img)   #process the image
 
-# code's location: Desktop/課外專業/iGEM國際基因工程競賽/DryLab/MV-kit/影像辨識
+
