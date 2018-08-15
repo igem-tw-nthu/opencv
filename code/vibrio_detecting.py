@@ -90,7 +90,7 @@ while True:
     endTime = int(time.time())
     print(endTime)
     if (endTime - startTime) % 10 == 0:
-        photo()
+        #photo()
         filename = "../image/camera/real.jpg" #"../image/camera/real.jpg""detected_vibrio.jpg" "camera.jpg"
         img = cv2.imread(filename)  #open and read the image
         distance(img)   #process the image
