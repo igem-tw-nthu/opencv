@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import time
 
 def photo():
-    camera = cv2.VideoCapture(1)
+    camera = cv2.VideoCapture(0)
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
@@ -74,6 +74,7 @@ def analysis(color, sample, detec):
                 # need not to send message #
                 ############################
     anaFile.close()
+    return detec
 
 startTime = int(time.time())
 sample_value = [0 for i in range(96)]
@@ -82,12 +83,12 @@ i = 0
 while True:
     endTime = int(time.time())
     if (endTime - startTime) % 10 == 0:
-        # fileName = photo()
-        fileName = "detected_vibrio.jpg"
+        fileName = photo()
+        # fileName = "detected_vibrio.jpg"
         image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
-        plt.imshow(image_rgb)
-        plt.show()
+        # plt.imshow(image_rgb)
+        # plt.show()
         # r, g, b = image_rgb[20, 300]
         # print("位置(20, 300)處的像素 -> 红:%d, 綠:%d, 藍:%d" %(r,g,b))
         
