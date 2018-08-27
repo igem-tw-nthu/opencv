@@ -82,7 +82,7 @@ detec_value = [0 for i in range(96)]
 i = 0
 while True:
     endTime = int(time.time())
-    if (endTime - startTime) % 10 == 0:
+    if (endTime - startTime) % 3600 == 0:
         fileName = photo()
         # fileName = "detected_vibrio.jpg"
         image_bgr = cv2.imread(fileName)
