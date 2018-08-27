@@ -17,14 +17,14 @@ def photo():
 def filter(image):
     blue = green = red = 0
     color = [[0 for i in range(3)] for j in range(96)]
-    startX = 41
-    startY = 39
-    row_length = 22
-    column_length = 22
-    square_length = 4
-    for i in range(96):
-        r = i % 12
-        c = math.floor(i / 12)
+    startX = 156
+    startY = 109
+    row_length = 125
+    column_length = 122
+    square_length = 18
+    for i in range(24):
+        r = i % 4
+        c = math.floor(i / 4)
         centerX = startX + row_length * r
         centerY = startY + column_length * c
         for j in range(square_length * square_length):
@@ -52,7 +52,7 @@ def mvkit(sample, i):
 
 def analysis(color, sample, detec):
     anaFile = open("ana_value.txt", "w")
-    for i in range(96):
+    for i in range(24):
         if color[i][0] < 100 and color[i][1] < 50 and color[i][2] < 50:
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
@@ -77,8 +77,8 @@ def analysis(color, sample, detec):
     return detec
 
 startTime = int(time.time())
-sample_value = [0 for i in range(96)]
-detec_value = [0 for i in range(96)]
+sample_value = [0 for i in range(24)]
+detec_value = [0 for i in range(24)]
 i = 0
 while True:
     endTime = int(time.time())
@@ -101,7 +101,7 @@ while True:
         detec_value = analysis(color_value, sample_value, detec_value)
 
         colorFile = open("color_value.txt", "w")
-        for j in range(96):
+        for j in range(24):
             # print("value[%d] = " %j, color_value[j], detec_value[j])
             colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
         colorFile.close()
