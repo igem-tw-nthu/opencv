@@ -1,3 +1,24 @@
-color_value[16] = [54.45061728395062, 36.17283950617284, 24.99074074074074], detec_value[16] = 1535438958
-color_value[20] = [20.104938271604937, 6.003086419753086, 0.37037037037037035], detec_value[20] = 1535438958
-color_value[21] = [34.46296296296296, 22.22530864197531, 14.382716049382717], detec_value[21] = 1535438958
+color_value[ 0] = [1.0, 1.0, 1.0], detec_value[ 0] = 1
+color_value[ 1] = [1.0, 1.0, 1.0], detec_value[ 1] = 1535439773
+color_value[ 2] = [1.0, 1.0, 1.0], detec_value[ 2] = 1535439773
+color_value[ 3] = [1.0, 1.0, 1.0], detec_value[ 3] = 1535439773
+color_value[ 4] = [1.0, 1.0, 1.0], detec_value[ 4] = 1535439773
+color_value[ 5] = [1.0, 1.0, 1.0], detec_value[ 5] = 1535439773
+color_value[ 6] = [1.0, 1.0, 1.0], detec_value[ 6] = 1535439773
+color_value[ 7] = [1.0, 1.0, 1.0], detec_value[ 7] = 1535439773
+color_value[ 8] = [1.0, 1.0, 1.0], detec_value[ 8] = 1535439773
+color_value[ 9] = [0.9969135802469136, 0.9969135802469136, 0.9969135802469136], detec_value[ 9] = 1535439773
+color_value[10] = [1.0, 1.0, 1.0], detec_value[10] = 1535439773
+color_value[11] = [1.0, 1.0, 1.0], detec_value[11] = 1535439773
+color_value[12] = [1.0, 1.0, 1.0], detec_value[12] = 1535439773
+color_value[13] = [1.0, 1.0, 1.0], detec_value[13] = 1535439773
+color_value[14] = [1.0, 1.0, 1.0], detec_value[14] = 1535439773
+color_value[15] = [1.0, 1.0, 1.0], detec_value[15] = 1535439773
+color_value[16] = [1.0, 1.0, 1.0], detec_value[16] = 1535439773
+color_value[17] = [1.0, 1.0, 1.0], detec_value[17] = 1535439773
+color_value[18] = [1.0, 1.0, 1.0], detec_value[18] = 1535439773
+color_value[19] = [1.0, 1.0, 1.0], detec_value[19] = 1535439773
+color_value[20] = [1.0, 1.0, 1.0], detec_value[20] = 1535439773
+color_value[21] = [1.0, 1.0, 1.0], detec_value[21] = 1535439773
+color_value[22] = [1.0, 1.0, 1.0], detec_value[22] = 1535439773
+color_value[23] = [1.0, 1.0, 1.0], detec_value[23] = 1535439773
