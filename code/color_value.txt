@@ -1,24 +1,24 @@
-color_value[ 0] = [1.0, 1.0, 1.0], sample_value[ 0] = 1535617182
-color_value[ 1] = [1.0, 1.0, 1.0], sample_value[ 1] = 0
-color_value[ 2] = [1.0, 1.0, 1.0], sample_value[ 2] = 0
-color_value[ 3] = [1.0, 1.0, 1.0], sample_value[ 3] = 0
-color_value[ 4] = [0.9691358024691358, 1.0092592592592593, 1.0432098765432098], sample_value[ 4] = 0
-color_value[ 5] = [1.0, 1.0, 1.0], sample_value[ 5] = 0
+color_value[ 0] = [1.0, 1.0, 1.0], sample_value[ 0] = 1535617477
+color_value[ 1] = [1.0, 1.0, 1.0], sample_value[ 1] = 1535621077
+color_value[ 2] = [1.0, 1.0, 1.0], sample_value[ 2] = 1535624677
+color_value[ 3] = [1.0, 1.0, 1.0], sample_value[ 3] = 1535628277
+color_value[ 4] = [1.0277777777777777, 0.9938271604938271, 0.9845679012345679], sample_value[ 4] = 1535631877
+color_value[ 5] = [1.0, 1.0, 1.0], sample_value[ 5] = 1535635477
 color_value[ 6] = [1.0, 1.0, 1.0], sample_value[ 6] = 0
-color_value[ 7] = [1.0, 1.0, 1.0], sample_value[ 7] = 0
-color_value[ 8] = [1.132716049382716, 1.1388888888888888, 0.9845679012345679], sample_value[ 8] = 0
-color_value[ 9] = [1.0, 1.0, 1.0], sample_value[ 9] = 0
-color_value[10] = [1.0, 1.0, 1.0], sample_value[10] = 0
+color_value[ 7] = [0.9814814814814815, 0.9814814814814815, 0.9814814814814815], sample_value[ 7] = 0
+color_value[ 8] = [1.117283950617284, 1.0154320987654322, 0.9753086419753086], sample_value[ 8] = 0
+color_value[ 9] = [0.9969135802469136, 0.9969135802469136, 0.9969135802469136], sample_value[ 9] = 0
+color_value[10] = [0.9506172839506173, 0.9506172839506173, 0.9506172839506173], sample_value[10] = 0
 color_value[11] = [1.0, 1.0, 1.0], sample_value[11] = 0
-color_value[12] = [16.15432098765432, 12.947530864197532, 8.166666666666666], sample_value[12] = 0
+color_value[12] = [1.0030864197530864, 1.0030864197530864, 1.1944444444444444], sample_value[12] = 0
 color_value[13] = [1.0, 1.0, 1.0], sample_value[13] = 0
 color_value[14] = [1.0, 1.0, 1.0], sample_value[14] = 0
-color_value[15] = [1.0, 1.0, 1.0], sample_value[15] = 0
-color_value[16] = [1.1296296296296295, 1.1635802469135803, 1.0987654320987654], sample_value[16] = 0
+color_value[15] = [0.9290123456790124, 0.9290123456790124, 0.9290123456790124], sample_value[15] = 0
+color_value[16] = [1.0, 1.0, 1.0], sample_value[16] = 0
 color_value[17] = [1.0, 1.0, 1.0], sample_value[17] = 0
 color_value[18] = [1.0, 1.0, 1.0], sample_value[18] = 0
-color_value[19] = [1.0, 1.0, 1.0], sample_value[19] = 0
-color_value[20] = [1.5679012345679013, 0.7746913580246914, 0.20987654320987653], sample_value[20] = 0
-color_value[21] = [1.3364197530864197, 1.2808641975308641, 0.9197530864197531], sample_value[21] = 0
+color_value[19] = [1.0, 1.0, 0.9753086419753086], sample_value[19] = 0
+color_value[20] = [9.061728395061728, 3.4012345679012346, 0.4537037037037037], sample_value[20] = 0
+color_value[21] = [1.0, 1.0, 1.0], sample_value[21] = 0
 color_value[22] = [1.0, 1.0, 1.0], sample_value[22] = 0
 color_value[23] = [1.0, 1.0, 1.0], sample_value[23] = 0
