@@ -13,7 +13,7 @@ def photo():
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
-    fileName = "camera" + str(int(time.time())) + ".jpg"
+    fileName = "camera" + str(time.ctime()) + ".jpg"
     cv2.imwrite(fileName, frame)
     camera.release()
     # GPIO.output(channel, GPIO.LOW)
