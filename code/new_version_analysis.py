@@ -9,11 +9,11 @@ channel = 18
 
 def photo():
     # GPIO.output(channel, GPIO.HIGH)
-    camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(1)
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
-    fileName = "camera" + str(time.ctime()) + ".jpg"
+    fileName = "camera" + str(time.ctime(time.time())) + ".jpg"
     cv2.imwrite(fileName, frame)
     camera.release()
     # GPIO.output(channel, GPIO.LOW)
