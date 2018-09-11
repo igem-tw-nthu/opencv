@@ -63,13 +63,13 @@ def mvkit(sample, i):
     return sample
 
 def analysis(color, sample, detec):
-    anaFile = open("ana_value.txt", "w")
+    anaFile = open("ana_value.txt", "a")
     for i in range(48):
-        if color[i][0] < 100 and color[i][1] < 90 and color[i][2] < 90:
+        if color[i][0] < 110 and color[i][1] < 90 and color[i][2] < 90:
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
-            anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" %(i, color[i], i, detec[i]))
+                anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" %(i, color[i], i, detec[i]))
             if detec[i] < 21600:
                 a = 1
                 ##########################
@@ -92,6 +92,7 @@ startTime = int(time.time())
 sample_value = [startTime for i in range(48)]
 detec_value = [0 for i in range(48)]
 i = 0
+k = 0
 while True:
     endTime = int(time.time())
     if (endTime - startTime) % 1200 == 0:
@@ -112,10 +113,13 @@ while True:
         
         detec_value = analysis(color_value, sample_value, detec_value)
 
-        colorFile = open("color_value.txt", "w")
+        colorFile = open("color_value.txt", "a")
+        colorFile.write("Sample %d\n\n" %(k))
+        k = k + 1
         for j in range(48):
             # print("value[%d] = " %j, color_value[j], detec_value[j])
             colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
+        colorFile.write("\n\n")
         colorFile.close()
 
 
