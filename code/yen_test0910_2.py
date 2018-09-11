@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import time
 
 def photo():
-    camera = cv2.VideoCapture(1)
+    camera = cv2.VideoCapture(0)
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
@@ -124,8 +124,4 @@ while True:
 
 # Tue Sep  4 08_19_58 2018
 # Tue Sep  4 10_39_58 2018
-
-
-
-
 

@@ -95,12 +95,12 @@ i = 0
 while True:
     endTime = int(time.time())
     if (endTime - startTime) % 1200 == 0:
-        # fileName = photo()
-        fileName = "Real/Version_2/opencv-/newlens2.png"
+        fileName = photo()
+        # fileName = "Real/Version_2/opencv-/newlens2.png"
         image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
-        plt.imshow(image_rgb)
-        plt.show()
+        # plt.imshow(image_rgb)
+        # plt.show()
         # r, g, b = image_rgb[20, 300]
         # print("位置(20, 300)處的像素 -> 红:%d, 綠:%d, 藍:%d" %(r,g,b))
         
@@ -124,8 +124,4 @@ while True:
 
 # Tue Sep  4 08_19_58 2018
 # Tue Sep  4 10_39_58 2018
-
-
-
-
 
