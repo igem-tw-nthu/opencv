@@ -114,7 +114,7 @@ while True:
         detec_value = analysis(color_value, sample_value, detec_value)
 
         colorFile = open("color_value.txt", "a")
-        colorFile.write("Sample %d\n\n" %(k))
+        colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
         k = k + 1
         for j in range(48):
             # print("value[%d] = " %j, color_value[j], detec_value[j])
