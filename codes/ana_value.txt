@@ -1,0 +1,7 @@
+color_value[ 0] = [21.415, 15.9325, 6.78], detec_value[ 0] = 6
+color_value[ 2] = [40.065, 33.7375, 17.3875], detec_value[ 2] = 6
+color_value[ 3] = [104.705, 86.125, 73.5625], detec_value[ 3] = 6
+color_value[ 8] = [55.3675, 41.3875, 28.5725], detec_value[ 8] = 6
+color_value[ 9] = [81.39, 61.34, 41.615], detec_value[ 9] = 6
+color_value[44] = [103.45, 73.985, 59.185], detec_value[44] = 6
+color_value[47] = [60.39, 54.6325, 19.685], detec_value[47] = 6
