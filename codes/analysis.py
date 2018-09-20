@@ -3,14 +3,16 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import time
+import os
 
 def photo():
     camera = cv2.VideoCapture(0)
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
+    savingBase = "../image/new"
     fileName = "camera " + str(time.ctime()) + ".jpg"
-    cv2.imwrite(fileName, frame)
+    cv2.imwrite(os.path.join(savingBase, fileName), frame)
     camera.release()
     return fileName
 
@@ -21,18 +23,18 @@ def filter(image):
     startY = 81
     # row_length = [47, 190, 366, 475, 829, 959, 1091, 1226]
     # column_length = [92, 247, 391, 500, 646, 772]
-    positionX = [[100, 248, 397, 546, 787, 927, 1063, 1190],
-                 [100, 242, 392, 539, 789, 929, 1069, 1195],
-                 [97, 242, 392, 541, 791, 929, 1069, 1197],
-                 [100, 244, 395, 537, 787, 931, 1067, 1197],
-                 [108, 248, 395, 543, 789, 929, 1065, 1194],
-                 [116, 257, 401, 546, 789, 925, 1061, 1188]]
-    positionY = [[128, 128, 131, 128, 135, 141, 148, 154],
-                 [273, 273, 271, 273, 284, 286, 290, 292],
-                 [422, 417, 415, 417, 428, 424, 433, 435],
-                 [562, 566, 566, 568, 570, 573, 573, 571],
-                 [709, 711, 713, 711, 721, 715, 711, 709],
-                 [853, 859, 862, 862, 864, 853, 847, 840]]
+    positionX = [[108, 246, 392, 527, 750, 884, 1008, 1126],
+                 [99, 244, 386, 527, 757, 888, 1015, 1132],
+                 [94, 236, 381, 525, 757, 893, 1020, 1136],
+                 [89, 233, 379, 524, 754, 891, 1023, 1140],
+                 [87, 229, 379, 525, 754, 891, 1021, 1139],
+                 [85, 232, 378, 522, 757, 890, 1021, 1142]]
+    positionY = [[111, 109, 111, 116, 123, 130, 143, 155],
+                 [244, 246, 246, 248, 258, 267, 274, 279],
+                 [381, 385, 385, 388, 393, 401, 402, 407],
+                 [523, 526, 528, 531, 534, 536, 538, 542],
+                 [669, 669, 674, 674, 676, 674, 673, 673],
+                 [815, 821, 820, 825, 818, 816, 810, 805]]
     square_length = 20
     for i in range(48):
         r = i % 8
@@ -64,8 +66,12 @@ def mvkit(sample, i):
 
 def analysis(color, sample, detec):
     anaFile = open("ana_value.txt", "a")
+    write = 0
     for i in range(48):
         if color[i][0] < 110 and color[i][1] < 90 and color[i][2] < 90:
+            if write == 0:
+                anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
+            write = 1
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
@@ -89,16 +95,22 @@ def analysis(color, sample, detec):
     return detec
 
 startTime = int(time.time())
+endTime = int(time.time())
+previousTime = endTime - 10
 sample_value = [startTime for i in range(48)]
 detec_value = [0 for i in range(48)]
 i = 0
 k = 0
+n = 0
 while True:
-    endTime = int(time.time())
-    if (endTime - startTime) % 300 == 0:
+    if (endTime - startTime) % 10 == 0 and endTime - previousTime > 5:
+        print("write %d" %(n))
+        n = n + 1
+        savingBase = "../image/new"
         fileName = photo()
-        # fileName = "Real/Version_2/opencv-/test_pos.jpg"
-        image_bgr = cv2.imread(fileName)
+        image_bgr = cv2.imread(os.path.join(savingBase, fileName))
+        # fileName = "Real/Version_2/opencv-/addRack.png"
+        # image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
         # plt.imshow(image_rgb)
         # plt.show()
@@ -121,6 +133,8 @@ while True:
             colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
         colorFile.write("\n\n")
         colorFile.close()
+        previousTime = endTime
+    endTime = int(time.time())
 
 
 
