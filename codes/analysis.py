@@ -4,7 +4,7 @@ import math
 import matplotlib.pyplot as plt
 import time
 import os
-# import paho.mqtt.client as mqttClient
+import paho.mqtt.client as mqttClient
 
 def on_connect(client, userdata, flags, rc):
  
@@ -83,9 +83,9 @@ def analysis(color, sample, detec):
     write = 0
     for i in range(48):
         if color[i][0] < 110 and color[i][1] < 90 and color[i][2] < 90:
-            if write == 0:
+            if detec[i] == 0 and write == 0:
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
-            write = 1
+                write = 1
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
@@ -94,6 +94,8 @@ def analysis(color, sample, detec):
                 # client.publish("python/test", value)
             if detec[i] < 21600:
                 a = 1
+                value = "important"
+                client.publish("python/test", value)
                 ##########################
                 # send dangerous message #
                 ##########################
@@ -110,22 +112,22 @@ def analysis(color, sample, detec):
     anaFile.close()
     return detec
 
-# Connected = False   #global variable for the state of the connection
+Connected = False   #global variable for the state of the connection
  
-# broker_address= "m13.cloudmqtt.com"  #Broker address
-# port = 13546                         #Broker port
-# user = "cnzndtre"                #Connection username
-# password = "kZvTMvF95idF"            #Connection password
+broker_address= "m13.cloudmqtt.com"  #Broker address
+port = 13546                         #Broker port
+user = "cnzndtre"                #Connection username
+password = "kZvTMvF95idF"            #Connection password
  
-# client = mqttClient.Client("Python")               #create new instance
-# client.username_pw_set(user, password=password)    #set username and password
-# client.on_connect= on_connect                      #attach function to callback
-# client.connect(broker_address, port=port)          #connect to broker
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.connect(broker_address, port=port)          #connect to broker
  
-# client.loop_start()        #start the loop
+client.loop_start()        #start the loop
 
-# while Connected != True:    #Wait for connection
-#     time.sleep(0.1)
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
 
 startTime = int(time.time())
 endTime = int(time.time())
