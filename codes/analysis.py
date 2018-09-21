@@ -69,9 +69,9 @@ def analysis(color, sample, detec):
     write = 0
     for i in range(48):
         if color[i][0] < 110 and color[i][1] < 90 and color[i][2] < 90:
-            if write == 0:
+            if detec[i] == 0 and write == 0:
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
-            write = 1
+                write = 1
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
