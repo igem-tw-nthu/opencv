@@ -4,6 +4,20 @@ import math
 import matplotlib.pyplot as plt
 import time
 import os
+import paho.mqtt.client as mqttClient
+
+def on_connect(client, userdata, flags, rc):
+ 
+    if rc == 0:
+ 
+        print("Connected to broker")
+ 
+        global Connected                #Use global variable
+        Connected = True                #Signal connection 
+ 
+    else:
+ 
+        print("Connection failed")
 
 def photo():
     camera = cv2.VideoCapture(0)
@@ -76,8 +90,12 @@ def analysis(color, sample, detec):
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
                 anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" %(i, color[i], i, detec[i]))
+                # value = "Important"
+                # client.publish("python/test", value)
             if detec[i] < 21600:
                 a = 1
+                value = "important"
+                client.publish("python/test", value)
                 ##########################
                 # send dangerous message #
                 ##########################
@@ -94,6 +112,23 @@ def analysis(color, sample, detec):
     anaFile.close()
     return detec
 
+Connected = False   #global variable for the state of the connection
+ 
+broker_address= "m13.cloudmqtt.com"  #Broker address
+port = 13546                         #Broker port
+user = "cnzndtre"                #Connection username
+password = "kZvTMvF95idF"            #Connection password
+ 
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.connect(broker_address, port=port)          #connect to broker
+ 
+client.loop_start()        #start the loop
+
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
+
 startTime = int(time.time())
 endTime = int(time.time())
 previousTime = endTime - 10
@@ -103,7 +138,7 @@ i = 0
 k = 0
 n = 0
 while True:
-    if (endTime - startTime) % 600 == 0 and endTime - previousTime > 5:
+    if (endTime - startTime) % 1200 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
         savingBase = "../image/new"
