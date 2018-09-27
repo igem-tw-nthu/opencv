@@ -94,7 +94,7 @@ def analysis(color, sample, detec):
                 # client.publish("python/test", value)
             if detec[i] < 21600:
                 a = 1
-                value = "important"
+                value = 12345
                 client.publish("python/test", value)
                 ##########################
                 # send dangerous message #
@@ -114,10 +114,10 @@ def analysis(color, sample, detec):
 
 Connected = False   #global variable for the state of the connection
  
-broker_address= "m13.cloudmqtt.com"  #Broker address
-port = 13546                         #Broker port
-user = "cnzndtre"                #Connection username
-password = "kZvTMvF95idF"            #Connection password
+broker_address= "m14.cloudmqtt.com"  #Broker address
+port = 17476                        #Broker port
+user = "fxrzavwa"                #Connection username
+password = "YJvtjXgFgxKP"            #Connection password
  
 client = mqttClient.Client("Python")               #create new instance
 client.username_pw_set(user, password=password)    #set username and password
@@ -128,6 +128,8 @@ client.loop_start()        #start the loop
 
 while Connected != True:    #Wait for connection
     time.sleep(0.1)
+
+client.publish("python/test", 123)
 
 startTime = int(time.time())
 endTime = int(time.time())
