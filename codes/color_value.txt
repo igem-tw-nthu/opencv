@@ -2338,3 +2338,107 @@ color_value[46] = [7.775, 9.88, 1.295], sample_value[46] = 1538816850
 color_value[47] = [10.8225, 12.2425, 6.08], sample_value[47] = 1538816850
 
 
+Sample 0  Sat Oct  6 09:18:25 2018
+
+color_value[ 0] = [21.6125, 24.1975, 14.3075], sample_value[ 0] = 1538817502
+color_value[ 1] = [92.1, 101.67, 100.0], sample_value[ 1] = 1538817502
+color_value[ 2] = [64.965, 68.2225, 64.315], sample_value[ 2] = 1538817502
+color_value[ 3] = [22.65, 23.05, 10.9625], sample_value[ 3] = 1538817502
+color_value[ 4] = [23.7025, 25.885, 12.1325], sample_value[ 4] = 1538817502
+color_value[ 5] = [20.91, 23.0575, 9.5275], sample_value[ 5] = 1538817502
+color_value[ 6] = [13.475, 14.34, 8.84], sample_value[ 6] = 1538817502
+color_value[ 7] = [19.6225, 20.8725, 17.205], sample_value[ 7] = 1538817502
+color_value[ 8] = [17.31, 19.63, 15.185], sample_value[ 8] = 1538817502
+color_value[ 9] = [47.705, 53.82, 47.9325], sample_value[ 9] = 1538817502
+color_value[10] = [59.2275, 62.865, 54.5125], sample_value[10] = 1538817502
+color_value[11] = [30.535, 32.66, 16.6], sample_value[11] = 1538817502
+color_value[12] = [19.0375, 20.5075, 10.17], sample_value[12] = 1538817502
+color_value[13] = [52.7025, 55.1675, 39.6625], sample_value[13] = 1538817502
+color_value[14] = [9.7675, 10.6725, 4.3], sample_value[14] = 1538817502
+color_value[15] = [9.0425, 10.8175, 5.6275], sample_value[15] = 1538817502
+color_value[16] = [12.3375, 15.03, 7.7875], sample_value[16] = 1538817502
+color_value[17] = [20.4275, 23.53, 16.92], sample_value[17] = 1538817502
+color_value[18] = [12.495, 14.195, 2.3325], sample_value[18] = 1538817502
+color_value[19] = [50.8375, 45.04, 28.965], sample_value[19] = 1538817502
+color_value[20] = [7.2475, 8.12, 2.6975], sample_value[20] = 1538817502
+color_value[21] = [41.435, 41.96, 32.9975], sample_value[21] = 1538817502
+color_value[22] = [13.9275, 15.2525, 6.7825], sample_value[22] = 1538817502
+color_value[23] = [2.795, 4.4575, 0.935], sample_value[23] = 1538817502
+color_value[24] = [3.7175, 5.835, 1.4325], sample_value[24] = 1538817502
+color_value[25] = [9.6625, 11.9275, 6.0825], sample_value[25] = 1538817502
+color_value[26] = [7.275, 8.67, 2.0925], sample_value[26] = 1538817502
+color_value[27] = [255.0, 255.0, 254.4], sample_value[27] = 1538817502
+color_value[28] = [6.555, 7.49, 2.42], sample_value[28] = 1538817502
+color_value[29] = [254.975, 254.9875, 254.27], sample_value[29] = 1538817502
+color_value[30] = [89.1025, 90.5675, 82.59], sample_value[30] = 1538817502
+color_value[31] = [1.31, 3.29, 0.63], sample_value[31] = 1538817502
+color_value[32] = [1.675, 3.4825, 0.705], sample_value[32] = 1538817502
+color_value[33] = [1.4025, 3.4025, 0.6525], sample_value[33] = 1538817502
+color_value[34] = [3.3775, 5.5575, 0.5], sample_value[34] = 1538817502
+color_value[35] = [11.7275, 13.325, 5.72], sample_value[35] = 1538817502
+color_value[36] = [6.535, 8.585, 1.99], sample_value[36] = 1538817502
+color_value[37] = [7.59, 8.215, 2.5175], sample_value[37] = 1538817502
+color_value[38] = [6.5575, 7.64, 2.005], sample_value[38] = 1538817502
+color_value[39] = [0.995, 2.025, 0.5325], sample_value[39] = 1538817502
+color_value[40] = [0.97, 1.03, 0.97], sample_value[40] = 1538817502
+color_value[41] = [0.8525, 1.49, 0.7825], sample_value[41] = 1538817502
+color_value[42] = [1.105, 2.9875, 0.4475], sample_value[42] = 1538817502
+color_value[43] = [3.19, 4.985, 0.6425], sample_value[43] = 1538817502
+color_value[44] = [0.87, 1.7725, 0.6825], sample_value[44] = 1538817502
+color_value[45] = [2.8075, 4.8975, 0.48], sample_value[45] = 1538817502
+color_value[46] = [2.1325, 3.36, 0.5975], sample_value[46] = 1538817502
+color_value[47] = [0.775, 1.41, 0.725], sample_value[47] = 1538817502
+
+
+Sample 1  Sat Oct  6 09:18:35 2018
+
+color_value[ 0] = [37.5475, 41.05, 39.02], sample_value[ 0] = 1538817502
+color_value[ 1] = [109.4075, 121.775, 118.1875], sample_value[ 1] = 1538817502
+color_value[ 2] = [255.0, 255.0, 254.96], sample_value[ 2] = 1538817502
+color_value[ 3] = [136.16, 142.37, 133.7875], sample_value[ 3] = 1538817502
+color_value[ 4] = [51.2425, 52.8575, 38.22], sample_value[ 4] = 1538817502
+color_value[ 5] = [41.385, 41.53, 24.175], sample_value[ 5] = 1538817502
+color_value[ 6] = [35.36, 36.4775, 29.215], sample_value[ 6] = 1538817502
+color_value[ 7] = [31.255, 34.0725, 34.5025], sample_value[ 7] = 1538817502
+color_value[ 8] = [24.63, 26.615, 21.4525], sample_value[ 8] = 1538817502
+color_value[ 9] = [66.1675, 71.17, 60.9675], sample_value[ 9] = 1538817502
+color_value[10] = [107.485, 111.13, 101.9], sample_value[10] = 1538817502
+color_value[11] = [89.69, 90.8575, 79.735], sample_value[11] = 1538817502
+color_value[12] = [36.185, 37.0075, 21.9575], sample_value[12] = 1538817502
+color_value[13] = [169.14, 181.215, 169.8775], sample_value[13] = 1538817502
+color_value[14] = [39.01, 40.1475, 31.07], sample_value[14] = 1538817502
+color_value[15] = [27.1075, 28.8875, 18.1875], sample_value[15] = 1538817502
+color_value[16] = [16.975, 20.0425, 13.93], sample_value[16] = 1538817502
+color_value[17] = [30.87, 33.7225, 27.425], sample_value[17] = 1538817502
+color_value[18] = [25.085, 26.9, 14.6075], sample_value[18] = 1538817502
+color_value[19] = [255.0, 255.0, 253.0], sample_value[19] = 1538817502
+color_value[20] = [19.27, 20.605, 8.28], sample_value[20] = 1538817502
+color_value[21] = [255.0, 255.0, 254.4], sample_value[21] = 1538817502
+color_value[22] = [103.335, 105.5875, 98.025], sample_value[22] = 1538817502
+color_value[23] = [13.045, 14.32, 5.81], sample_value[23] = 1538817502
+color_value[24] = [7.5675, 9.9875, 4.325], sample_value[24] = 1538817502
+color_value[25] = [15.415, 17.9475, 12.45], sample_value[25] = 1538817502
+color_value[26] = [14.5575, 15.98, 6.9725], sample_value[26] = 1538817502
+color_value[27] = [202.1225, 199.535, 183.415], sample_value[27] = 1538817502
+color_value[28] = [12.0075, 13.11, 6.085], sample_value[28] = 1538817502
+color_value[29] = [181.74, 180.5825, 158.0575], sample_value[29] = 1538817502
+color_value[30] = [24.4675, 26.17, 13.91], sample_value[30] = 1538817502
+color_value[31] = [9.535, 10.86, 2.7725], sample_value[31] = 1538817502
+color_value[32] = [3.1325, 5.145, 1.235], sample_value[32] = 1538817502
+color_value[33] = [4.09, 6.3975, 1.14], sample_value[33] = 1538817502
+color_value[34] = [7.4725, 9.035, 2.1025], sample_value[34] = 1538817502
+color_value[35] = [12.6475, 14.3025, 6.2825], sample_value[35] = 1538817502
+color_value[36] = [14.8625, 16.91, 6.675], sample_value[36] = 1538817502
+color_value[37] = [13.935, 15.5525, 4.3625], sample_value[37] = 1538817502
+color_value[38] = [14.2175, 15.3825, 8.1525], sample_value[38] = 1538817502
+color_value[39] = [7.29, 8.4925, 1.4125], sample_value[39] = 1538817502
+color_value[40] = [2.295, 4.105, 0.6725], sample_value[40] = 1538817502
+color_value[41] = [3.125, 5.17, 1.4525], sample_value[41] = 1538817502
+color_value[42] = [3.2675, 5.2325, 0.7125], sample_value[42] = 1538817502
+color_value[43] = [8.8475, 9.925, 4.4225], sample_value[43] = 1538817502
+color_value[44] = [4.02, 6.0325, 0.6375], sample_value[44] = 1538817502
+color_value[45] = [7.2125, 8.2475, 1.1275], sample_value[45] = 1538817502
+color_value[46] = [7.26, 8.3, 1.6275], sample_value[46] = 1538817502
+color_value[47] = [4.8025, 6.475, 1.4375], sample_value[47] = 1538817502
+
+
