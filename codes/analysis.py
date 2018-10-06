@@ -136,7 +136,7 @@ i = 0
 k = 0
 n = 0
 while True:
-    if (endTime - startTime) % 1200 == 0 and endTime - previousTime > 5:
+    if (endTime - startTime) % 10 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
         savingBase = "../image/new2"
