@@ -817,3 +817,33 @@ color_value[11] = [50.3425, 52.4375, 37.5], detec_value[11] = 34
 color_value[12] = [41.1225, 46.5775, 37.2375], detec_value[12] = 34
 color_value[21] = [29.71, 28.81, 13.3375], detec_value[21] = 34
 color_value[42] = [5.2025, 7.225, 1.12], detec_value[42] = 34
+Sample 0  Sat Oct  6 09:07:34 2018
+
+color_value[ 0] = [73.885, 73.765, 75.02], detec_value[ 0] = 4
+color_value[ 4] = [83.37, 83.84, 87.2], detec_value[ 4] = 4
+color_value[ 5] = [84.0325, 85.3475, 85.9725], detec_value[ 5] = 4
+color_value[ 6] = [78.0125, 79.5725, 79.055], detec_value[ 6] = 4
+color_value[ 7] = [85.8, 86.9775, 81.4875], detec_value[ 7] = 4
+color_value[ 8] = [60.645, 60.91, 57.9475], detec_value[ 8] = 4
+color_value[14] = [59.55, 60.205, 53.875], detec_value[14] = 4
+color_value[19] = [50.3775, 52.29, 48.0975], detec_value[19] = 4
+color_value[20] = [32.21, 33.9575, 21.3975], detec_value[20] = 4
+color_value[21] = [60.1125, 62.105, 49.3075], detec_value[21] = 4
+color_value[22] = [90.215, 87.75, 73.7125], detec_value[22] = 4
+color_value[27] = [39.31, 40.47, 32.9775], detec_value[27] = 4
+color_value[28] = [16.06, 17.6225, 7.85], detec_value[28] = 4
+color_value[29] = [25.7725, 24.29, 11.83], detec_value[29] = 4
+color_value[30] = [31.8175, 27.755, 11.8075], detec_value[30] = 4
+color_value[35] = [20.885, 22.5525, 14.2775], detec_value[35] = 4
+color_value[36] = [29.47, 30.9325, 23.5175], detec_value[36] = 4
+color_value[37] = [21.1275, 23.3225, 10.9625], detec_value[37] = 4
+color_value[38] = [12.6325, 13.7075, 6.64], detec_value[38] = 4
+color_value[39] = [23.0625, 24.075, 16.335], detec_value[39] = 4
+color_value[40] = [7.825, 9.4275, 2.31], detec_value[40] = 4
+color_value[41] = [9.295, 10.15, 5.3875], detec_value[41] = 4
+color_value[42] = [18.1675, 19.3725, 15.4625], detec_value[42] = 4
+color_value[43] = [10.235, 11.7475, 3.2725], detec_value[43] = 4
+color_value[44] = [5.5625, 7.6175, 1.2875], detec_value[44] = 4
+color_value[45] = [6.4, 8.1125, 2.625], detec_value[45] = 4
+color_value[46] = [7.775, 9.88, 1.295], detec_value[46] = 4
+color_value[47] = [10.8225, 12.2425, 6.08], detec_value[47] = 4
