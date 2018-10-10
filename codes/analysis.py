@@ -4,7 +4,7 @@ import math
 import matplotlib.pyplot as plt
 import time
 import os
-# import paho.mqtt.client as mqttClient
+import paho.mqtt.client as mqttClient
 
 def on_connect(client, userdata, flags, rc):
  
