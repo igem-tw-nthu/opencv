@@ -2678,3 +2678,31 @@ color_value[22] = [21.2425, 21.3825, 5.455], sample_value[22] = 1539153443
 color_value[23] = [17.13, 18.7275, 8.2825], sample_value[23] = 1539153443
 
 
+Sample 0  Wed Oct 10 06:40:34 2018
+
+color_value[ 0] = [168.27, 177.4225, 175.1075], sample_value[ 0] = 1539153630
+color_value[ 1] = [251.8575, 254.7075, 253.9225], sample_value[ 1] = 1539153630
+color_value[ 2] = [253.185, 254.6225, 253.875], sample_value[ 2] = 1539153630
+color_value[ 3] = [95.565, 94.2375, 91.8075], sample_value[ 3] = 1539153630
+color_value[ 4] = [135.0975, 133.9375, 128.3], sample_value[ 4] = 1539153630
+color_value[ 5] = [168.215, 179.6575, 180.33], sample_value[ 5] = 1539153630
+color_value[ 6] = [254.915, 254.99, 254.88], sample_value[ 6] = 1539153630
+color_value[ 7] = [255.0, 255.0, 255.0], sample_value[ 7] = 1539153630
+color_value[ 8] = [252.05, 251.2725, 248.085], sample_value[ 8] = 1539153630
+color_value[ 9] = [201.955, 210.7175, 210.5475], sample_value[ 9] = 1539153630
+color_value[10] = [98.73, 97.7475, 91.3875], sample_value[10] = 1539153630
+color_value[11] = [143.8125, 149.7475, 117.2875], sample_value[11] = 1539153630
+color_value[12] = [74.8825, 76.98, 74.5025], sample_value[12] = 1539153630
+color_value[13] = [49.07, 49.3025, 42.735], sample_value[13] = 1539153630
+color_value[14] = [53.5425, 52.0175, 43.7], sample_value[14] = 1539153630
+color_value[15] = [96.9225, 89.9625, 75.755], sample_value[15] = 1539153630
+color_value[16] = [35.885, 34.35, 25.8675], sample_value[16] = 1539153630
+color_value[17] = [96.685, 105.31, 93.8175], sample_value[17] = 1539153630
+color_value[18] = [41.65, 42.5625, 40.2775], sample_value[18] = 1539153630
+color_value[19] = [37.575, 38.225, 34.015], sample_value[19] = 1539153630
+color_value[20] = [33.6975, 34.1275, 27.245], sample_value[20] = 1539153630
+color_value[21] = [28.48, 28.1225, 21.675], sample_value[21] = 1539153630
+color_value[22] = [27.0175, 26.815, 10.775], sample_value[22] = 1539153630
+color_value[23] = [28.0025, 29.24, 21.1225], sample_value[23] = 1539153630
+
+
