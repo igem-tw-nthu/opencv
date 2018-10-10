@@ -4,15 +4,19 @@ import math
 import matplotlib.pyplot as plt
 import time
 import os
-import paho.mqtt.client as mqttClient
+# import paho.mqtt.client as mqttClient
 
 def on_connect(client, userdata, flags, rc):
+ 
     if rc == 0:
+ 
         print("Connected to broker")
-
+ 
         global Connected                #Use global variable
         Connected = True                #Signal connection 
+ 
     else:
+ 
         print("Connection failed")
 
 def photo():
@@ -20,7 +24,7 @@ def photo():
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
-    savingBase = "../image/new2"
+    savingBase = "../image/new"
     fileName = "camera " + str(time.ctime()) + ".jpg"
     cv2.imwrite(os.path.join(savingBase, fileName), frame)
     camera.release()
@@ -28,27 +32,23 @@ def photo():
 
 def filter(image):
     blue = green = red = 0
-    color = [[0 for i in range(3)] for j in range(48)]
+    color = [[0 for i in range(3)] for j in range(24)]
     startX = 47
     startY = 81
     # row_length = [47, 190, 366, 475, 829, 959, 1091, 1226]
     # column_length = [92, 247, 391, 500, 646, 772]
-    positionX = [[84, 226, 373, 514, 744, 871, 1002, 1124],
-                 [79, 227, 370, 511, 748, 881, 1009, 1127],
-                 [74, 221, 368, 513, 752, 883, 1013, 1137],
-                 [78, 218, 371, 515, 753, 891, 1018, 1140],
-                 [74, 221, 372, 520, 758, 892, 1022, 1146],
-                 [81, 227, 371, 518, 757, 891, 1025, 1149]]
-    positionY = [[126, 125, 124, 125, 135, 137, 149, 158],
-                 [262, 266, 261, 260, 277, 278, 281, 286],
-                 [403, 404, 402, 401, 416, 412, 413, 417],
-                 [547, 547, 546, 548, 551, 551, 548, 549],
-                 [694, 695, 692, 692, 695, 690, 685, 683],
-                 [841, 841, 845, 844, 840, 829, 819, 811]]
+    positionX = [[84, 226, 373, 514, 744, 871],
+                 [158, 322, 481, 645, 811, 976],
+                 [74, 221, 368, 513, 752, 883],
+                 [141, 308, 474, 644, 819, 990]]
+    positionY = [[126, 125, 124, 125, 135, 137],
+                 [262, 252, 248, 242, 242, 245],
+                 [403, 404, 402, 401, 416, 412],
+                 [530, 524, 522, 521, 521, 520]]
     square_length = 20
-    for i in range(48):
-        r = i % 8
-        c = math.floor(i / 8)
+    for i in range(24):
+        r = i % 6
+        c = math.floor(i / 6)
         centerX = positionX[c][r]
         centerY = positionY[c][r]
         for j in range(square_length * square_length):
@@ -77,11 +77,11 @@ def mvkit(sample, i):
 def analysis(color, sample, detec):
     anaFile = open("ana_value.txt", "a")
     write = 0
-    for i in range(48):
+    for i in range(24):
         if color[i][0] < 110 and color[i][1] < 90 and color[i][2] < 90:
-            if detec[i] == 0 and write == 0:
+            if write == 0:
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
-                write = 1
+            write = 1
             if detec[i] == 0:
                 detec[i] = int(time.time()) - sample[i]
             # print("color_value[%d] = " %i, color[i], detec[i])
@@ -90,8 +90,6 @@ def analysis(color, sample, detec):
                 # client.publish("python/test", value)
             if detec[i] < 21600:
                 a = 1
-                value = 12345
-                client.publish("python/test", value)
                 ##########################
                 # send dangerous message #
                 ##########################
@@ -110,10 +108,10 @@ def analysis(color, sample, detec):
 
 Connected = False   #global variable for the state of the connection
  
-broker_address= "m14.cloudmqtt.com"  #Broker address
-port = 17476                        #Broker port
-user = "fxrzavwa"                #Connection username
-password = "YJvtjXgFgxKP"            #Connection password
+broker_address= "m13.cloudmqtt.com"  #Broker address
+port = 13546                         #Broker port
+user = "cnzndtre"                #Connection username
+password = "kZvTMvF95idF"            #Connection password
  
 client = mqttClient.Client("Python")               #create new instance
 client.username_pw_set(user, password=password)    #set username and password
@@ -125,24 +123,22 @@ client.loop_start()        #start the loop
 while Connected != True:    #Wait for connection
     time.sleep(0.1)
 
-client.publish("python/test", 123)
-
 startTime = int(time.time())
 endTime = int(time.time())
 previousTime = endTime - 10
-sample_value = [startTime for i in range(48)]
-detec_value = [0 for i in range(48)]
+sample_value = [startTime for i in range(24)]
+detec_value = [0 for i in range(24)]
 i = 0
 k = 0
 n = 0
 while True:
-    if (endTime - startTime) % 10 == 0 and endTime - previousTime > 5:
+    if (endTime - startTime) % 1200 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
-        savingBase = "../image/new2"
+        savingBase = "../image/new"
         fileName = photo()
         image_bgr = cv2.imread(os.path.join(savingBase, fileName))
-        # fileName = "Real/Version_2/opencv-/addRack.png"
+        # fileName = "Real/Version_2/opencv-/Image Deteection.jpg"
         # image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
         # plt.imshow(image_rgb)
@@ -161,7 +157,7 @@ while True:
         colorFile = open("color_value.txt", "a")
         colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
         k = k + 1
-        for j in range(48):
+        for j in range(24):
             # print("value[%d] = " %j, color_value[j], detec_value[j])
             colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
         colorFile.write("\n\n")
