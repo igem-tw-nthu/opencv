@@ -37,14 +37,14 @@ def filter(image):
     startY = 81
     # row_length = [47, 190, 366, 475, 829, 959, 1091, 1226]
     # column_length = [92, 247, 391, 500, 646, 772]
-    positionX = [[84, 226, 373, 514, 744, 871],
-                 [158, 322, 481, 645, 811, 976],
-                 [74, 221, 368, 513, 752, 883],
-                 [141, 308, 474, 644, 819, 990]]
-    positionY = [[126, 125, 124, 125, 135, 137],
-                 [262, 252, 248, 242, 242, 245],
-                 [403, 404, 402, 401, 416, 412],
-                 [530, 524, 522, 521, 521, 520]]
+    positionX = [[130, 323, 500, 671, 840, 999],
+                 [137, 321, 496, 673, 840, 1002],
+                 [131, 318, 496, 672, 841, 1007],
+                 [133, 321, 496, 667, 841, 1004]]
+    positionY = [[272, 265, 264, 266, 271, 278],
+                 [438, 439, 440, 443, 446, 446],
+                 [625, 625, 627, 629, 626, 621],
+                 [793, 798, 800, 799, 791, 787]]
     square_length = 20
     for i in range(24):
         r = i % 6
@@ -106,22 +106,22 @@ def analysis(color, sample, detec):
     anaFile.close()
     return detec
 
-Connected = False   #global variable for the state of the connection
+# Connected = False   #global variable for the state of the connection
  
-broker_address= "m13.cloudmqtt.com"  #Broker address
-port = 13546                         #Broker port
-user = "cnzndtre"                #Connection username
-password = "kZvTMvF95idF"            #Connection password
+# broker_address= "m13.cloudmqtt.com"  #Broker address
+# port = 13546                         #Broker port
+# user = "cnzndtre"                #Connection username
+# password = "kZvTMvF95idF"            #Connection password
  
-client = mqttClient.Client("Python")               #create new instance
-client.username_pw_set(user, password=password)    #set username and password
-client.on_connect= on_connect                      #attach function to callback
-client.connect(broker_address, port=port)          #connect to broker
+# client = mqttClient.Client("Python")               #create new instance
+# client.username_pw_set(user, password=password)    #set username and password
+# client.on_connect= on_connect                      #attach function to callback
+# client.connect(broker_address, port=port)          #connect to broker
  
-client.loop_start()        #start the loop
+# client.loop_start()        #start the loop
 
-while Connected != True:    #Wait for connection
-    time.sleep(0.1)
+# while Connected != True:    #Wait for connection
+#     time.sleep(0.1)
 
 startTime = int(time.time())
 endTime = int(time.time())
@@ -141,8 +141,8 @@ while True:
         # fileName = "Real/Version_2/opencv-/Image Deteection.jpg"
         # image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
-        # plt.imshow(image_rgb)
-        # plt.show()
+        plt.imshow(image_rgb)
+        plt.show()
         # r, g, b = image_rgb[20, 300]
         # print("位置(20, 300)處的像素 -> 红:%d, 綠:%d, 藍:%d" %(r,g,b))
         
