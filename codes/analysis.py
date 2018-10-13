@@ -7,16 +7,12 @@ import os
 import paho.mqtt.client as mqttClient
 
 def on_connect(client, userdata, flags, rc):
- 
     if rc == 0:
- 
         print("Connected to broker")
  
         global Connected                #Use global variable
         Connected = True                #Signal connection 
- 
     else:
- 
         print("Connection failed")
 
 def photo():
@@ -67,11 +63,9 @@ def filter(image):
         blue = green = red = 0
     return color
 
-def mvkit(sample, i):
-    #########################################
-    # give the sample in fish farm to mvkit #
-    #########################################
-    sample[i] = int(time.time())
+def mvkit(sample, time):
+    for i in range(24):
+        sample[i] = time * i
     return sample
 
 def analysis(color, sample, detec):
@@ -83,51 +77,41 @@ def analysis(color, sample, detec):
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
             write = 1
             if detec[i] == 0:
-                detec[i] = int(time.time()) - sample[i]
-            # print("color_value[%d] = " %i, color[i], detec[i])
+                timeInterval = int(time.time()) - sample[i]
+                detec[i] = 0.65713 * ((timeInterval / 60) ** 0.05614)
+                # print("color_value[%d] = " %i, color[i], detec[i])
                 anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" %(i, color[i], i, detec[i]))
                 # value = "Important"
                 # client.publish("python/test", value)
-            if detec[i] < 21600:
-                a = 1
-                ##########################
-                # send dangerous message #
-                ##########################
-            elif detec[i] < 86400:
-                a = 1
-                #########################
-                # send original message #
-                #########################
-            else:
-                a = 1
-                ############################
-                # need not to send message #
-                ############################
+            if detec[i] > 1000:
+                client.publish("python/test", detec[i])
+                
     anaFile.close()
     return detec
 
-# Connected = False   #global variable for the state of the connection
+Connected = False   #global variable for the state of the connection
  
-# broker_address= "m13.cloudmqtt.com"  #Broker address
-# port = 13546                         #Broker port
-# user = "cnzndtre"                #Connection username
-# password = "kZvTMvF95idF"            #Connection password
+broker_address= "m13.cloudmqtt.com"  #Broker address
+port = 13546                         #Broker port
+user = "cnzndtre"                #Connection username
+password = "kZvTMvF95idF"            #Connection password
  
-# client = mqttClient.Client("Python")               #create new instance
-# client.username_pw_set(user, password=password)    #set username and password
-# client.on_connect= on_connect                      #attach function to callback
-# client.connect(broker_address, port=port)          #connect to broker
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.connect(broker_address, port=port)          #connect to broker
  
-# client.loop_start()        #start the loop
+client.loop_start()        #start the loop
 
-# while Connected != True:    #Wait for connection
-#     time.sleep(0.1)
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
 
 startTime = int(time.time())
 endTime = int(time.time())
 previousTime = endTime - 10
 sample_value = [startTime for i in range(24)]
 detec_value = [0 for i in range(24)]
+sample_value = mvkit(sample_value, 86400)
 i = 0
 k = 0
 n = 0
@@ -138,7 +122,7 @@ while True:
         savingBase = "../image/new2"
         fileName = photo()
         image_bgr = cv2.imread(os.path.join(savingBase, fileName))
-        # fileName = "Real/Version_2/opencv-/Image Deteection.jpg"
+        # fileName = "Real/Version_2/opencv-/camera Wed Oct 10 06_40_34 2018.jpg"
         # image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
         plt.imshow(image_rgb)
