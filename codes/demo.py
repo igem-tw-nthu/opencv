@@ -4,7 +4,7 @@ import math
 import matplotlib.pyplot as plt
 import time
 import os
-# import paho.mqtt.client as mqttClient
+import paho.mqtt.client as mqttClient
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -93,22 +93,22 @@ def analysis(color, sample, detec):
     anaFile.close()
     return detec
 
-# Connected = False   #global variable for the state of the connection
+Connected = False   #global variable for the state of the connection
  
-# broker_address= "m13.cloudmqtt.com"  #Broker address
-# port = 13546                         #Broker port
-# user = "cnzndtre"                #Connection username
-# password = "kZvTMvF95idF"            #Connection password
+broker_address= "m13.cloudmqtt.com"  #Broker address
+port = 13546                         #Broker port
+user = "cnzndtre"                #Connection username
+password = "kZvTMvF95idF"            #Connection password
  
-# client = mqttClient.Client("Python")               #create new instance
-# client.username_pw_set(user, password=password)    #set username and password
-# client.on_connect= on_connect                      #attach function to callback
-# client.connect(broker_address, port=port)          #connect to broker
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.connect(broker_address, port=port)          #connect to broker
  
-# client.loop_start()        #start the loop
+client.loop_start()        #start the loop
 
-# while Connected != True:    #Wait for connection
-#     time.sleep(0.1)
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
 
 startTime = int(time.time())
 endTime = int(time.time())
