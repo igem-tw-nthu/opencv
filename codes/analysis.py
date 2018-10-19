@@ -20,7 +20,7 @@ def photo():
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
-    savingBase = "../image/new2"
+    savingBase = "../image"
     fileName = "camera " + str(time.ctime()) + ".jpg"
     cv2.imwrite(os.path.join(savingBase, fileName), frame)
     camera.release()
@@ -119,7 +119,7 @@ while True:
     if (endTime - startTime) % 1200 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
-        savingBase = "../image/new2"
+        savingBase = "../image"
         fileName = photo()
         image_bgr = cv2.imread(os.path.join(savingBase, fileName))
         # fileName = "Real/Version_2/opencv-/camera Wed Oct 10 06_40_34 2018.jpg"
