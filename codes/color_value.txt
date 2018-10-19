@@ -2706,3 +2706,31 @@ color_value[22] = [27.0175, 26.815, 10.775], sample_value[22] = 1539153630
 color_value[23] = [28.0025, 29.24, 21.1225], sample_value[23] = 1539153630
 
 
+Sample 0  Fri Oct 19 14:02:01 2018
+
+color_value[ 0] = [1.0, 1.0, 1.0], sample_value[ 0] = 0
+color_value[ 1] = [0.995, 1.01, 0.995], sample_value[ 1] = 86400
+color_value[ 2] = [0.98, 1.02, 1.0], sample_value[ 2] = 172800
+color_value[ 3] = [0.98, 1.02, 0.99], sample_value[ 3] = 259200
+color_value[ 4] = [1.0, 1.0, 1.0], sample_value[ 4] = 345600
+color_value[ 5] = [1.0, 1.0, 1.0], sample_value[ 5] = 432000
+color_value[ 6] = [1.0, 1.0, 1.0], sample_value[ 6] = 518400
+color_value[ 7] = [1.0025, 0.9975, 1.03], sample_value[ 7] = 604800
+color_value[ 8] = [0.9975, 0.9975, 0.9975], sample_value[ 8] = 691200
+color_value[ 9] = [1.0, 1.0, 1.0], sample_value[ 9] = 777600
+color_value[10] = [1.0, 1.0, 1.0], sample_value[10] = 864000
+color_value[11] = [1.0, 1.0, 1.0], sample_value[11] = 950400
+color_value[12] = [1.0, 1.0, 1.0], sample_value[12] = 1036800
+color_value[13] = [1.0, 1.0, 1.0], sample_value[13] = 1123200
+color_value[14] = [1.0, 1.0, 1.0], sample_value[14] = 1209600
+color_value[15] = [1.0, 1.0, 1.0], sample_value[15] = 1296000
+color_value[16] = [1.0, 1.0, 1.0], sample_value[16] = 1382400
+color_value[17] = [1.0, 1.0, 1.0], sample_value[17] = 1468800
+color_value[18] = [1.0, 1.0, 1.0], sample_value[18] = 1555200
+color_value[19] = [1.0, 1.0, 1.0], sample_value[19] = 1641600
+color_value[20] = [1.0, 1.0, 1.0], sample_value[20] = 1728000
+color_value[21] = [1.0, 1.0, 1.0], sample_value[21] = 1814400
+color_value[22] = [1.0, 1.0, 1.0], sample_value[22] = 1900800
+color_value[23] = [1.0, 1.0, 1.0], sample_value[23] = 1987200
+
+

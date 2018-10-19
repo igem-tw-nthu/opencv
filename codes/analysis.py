@@ -91,7 +91,7 @@ def analysis(color, sample, detec):
 
 Connected = False   #global variable for the state of the connection
  
-broker_address= "m13.cloudmqtt.com"  #Broker address
+broker_address = "m13.cloudmqtt.com"  #Broker address
 port = 13546                         #Broker port
 user = "cnzndtre"                #Connection username
 password = "kZvTMvF95idF"            #Connection password

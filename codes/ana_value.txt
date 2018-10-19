@@ -1016,3 +1016,29 @@ color_value[20] = [33.6975, 34.1275, 27.245], detec_value[20] = 4
 color_value[21] = [28.48, 28.1225, 21.675], detec_value[21] = 4
 color_value[22] = [27.0175, 26.815, 10.775], detec_value[22] = 4
 color_value[23] = [28.0025, 29.24, 21.1225], detec_value[23] = 4
+Sample 0  Fri Oct 19 14:02:01 2018
+
+color_value[ 0] = [1.0, 1.0, 1.0], detec_value[ 0] = 1.7124292098213116
+color_value[ 1] = [0.995, 1.01, 0.995], detec_value[ 1] = 1.7124238159388332
+color_value[ 2] = [0.98, 1.02, 1.0], detec_value[ 2] = 1.7124184217706946
+color_value[ 3] = [0.98, 1.02, 0.99], detec_value[ 3] = 1.712413027316864
+color_value[ 4] = [1.0, 1.0, 1.0], detec_value[ 4] = 1.7124076325773114
+color_value[ 5] = [1.0, 1.0, 1.0], detec_value[ 5] = 1.7124022375520047
+color_value[ 6] = [1.0, 1.0, 1.0], detec_value[ 6] = 1.712396842240913
+color_value[ 7] = [1.0025, 0.9975, 1.03], detec_value[ 7] = 1.7123914466440053
+color_value[ 8] = [0.9975, 0.9975, 0.9975], detec_value[ 8] = 1.7123860507612503
+color_value[ 9] = [1.0, 1.0, 1.0], detec_value[ 9] = 1.712380654592617
+color_value[10] = [1.0, 1.0, 1.0], detec_value[10] = 1.7123752581380736
+color_value[11] = [1.0, 1.0, 1.0], detec_value[11] = 1.7123698613975893
+color_value[12] = [1.0, 1.0, 1.0], detec_value[12] = 1.7123644643711333
+color_value[13] = [1.0, 1.0, 1.0], detec_value[13] = 1.7123590670586737
+color_value[14] = [1.0, 1.0, 1.0], detec_value[14] = 1.7123536694601795
+color_value[15] = [1.0, 1.0, 1.0], detec_value[15] = 1.7123482715756195
+color_value[16] = [1.0, 1.0, 1.0], detec_value[16] = 1.7123428734049628
+color_value[17] = [1.0, 1.0, 1.0], detec_value[17] = 1.7123374749481777
+color_value[18] = [1.0, 1.0, 1.0], detec_value[18] = 1.7123320762052332
+color_value[19] = [1.0, 1.0, 1.0], detec_value[19] = 1.7123266771760979
+color_value[20] = [1.0, 1.0, 1.0], detec_value[20] = 1.7123212778607408
+color_value[21] = [1.0, 1.0, 1.0], detec_value[21] = 1.7123158782591303
+color_value[22] = [1.0, 1.0, 1.0], detec_value[22] = 1.7123104783712357
+color_value[23] = [1.0, 1.0, 1.0], detec_value[23] = 1.7123050781970253
