@@ -1,0 +1,168 @@
+Sample 0  Fri Oct 19 17:21:56 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1539969713
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1539969718
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1539969723
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1539969728
+
+
+Sample 1  Fri Oct 19 17:22:15 2018
+
+color_value[ 0] = [254.86, 254.97, 252.59], sample_value[ 0] = 1539969713
+color_value[ 1] = [254.83, 255.0, 253.04], sample_value[ 1] = 1539969718
+color_value[ 2] = [252.34, 168.71, 176.47], sample_value[ 2] = 1539969723
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1539969728
+
+
+Sample 0  Sat Oct 20 15:42:40 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050160
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050165
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050170
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050175
+
+
+Sample 1  Sat Oct 20 15:43:00 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050160
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050165
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050170
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050175
+
+
+Sample 0  Sat Oct 20 15:46:06 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050366
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050371
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050376
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050381
+
+
+Sample 1  Sat Oct 20 15:46:26 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050366
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050371
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050376
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050381
+
+
+Sample 2  Sat Oct 20 15:46:46 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050366
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050371
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050376
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050381
+
+
+Sample 3  Sat Oct 20 15:47:06 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050366
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050371
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050376
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050381
+
+
+Sample 0  Sat Oct 20 15:48:17 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 1  Sat Oct 20 15:48:37 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 2  Sat Oct 20 15:48:57 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 3  Sat Oct 20 15:49:17 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 4  Sat Oct 20 15:49:37 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 5  Sat Oct 20 15:49:57 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 6  Sat Oct 20 15:50:17 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 7  Sat Oct 20 15:50:37 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 8  Sat Oct 20 15:50:57 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540050497
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540050502
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540050507
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540050512
+
+
+Sample 0  Sat Oct 20 16:12:03 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540051923
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540051928
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540051933
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540051938
+
+
+Sample 1  Sat Oct 20 16:12:23 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540051923
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540051928
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540051933
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540051938
+
+
+Sample 2  Sat Oct 20 16:12:43 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540051923
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540051928
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540051933
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540051938
+
+
+Sample 0  Sat Oct 20 16:16:40 2018
+
+color_value[ 0] = [254.98, 254.9, 252.93], sample_value[ 0] = 1540052200
+color_value[ 1] = [254.92, 255.0, 253.14], sample_value[ 1] = 1540052205
+color_value[ 2] = [251.77, 173.21, 178.22], sample_value[ 2] = 1540052210
+color_value[ 3] = [255.0, 255.0, 253.0], sample_value[ 3] = 1540052215
+
+

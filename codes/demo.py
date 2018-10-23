@@ -20,7 +20,7 @@ def photo():
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
     ret, frame = camera.read()
-    savingBase = "../image/new2"
+    savingBase = "../image"
     fileName = "camera " + str(time.ctime()) + ".jpg"
     cv2.imwrite(os.path.join(savingBase, fileName), frame)
     camera.release()
@@ -77,10 +77,10 @@ def analysis(color, sample, detec):
             if write == 0:
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
             write = 1
-            # if detec[i] == 0:
-            timeInterval = int(time.time()) - sample[i]
-            if timeInterval != 0:
-                detec[i] = ((timeInterval * 60) ** (-17.8126)) * 7.1825 * (10 ** 57)
+            if detec[i] == 0:
+                timeInterval = int(time.time()) - sample[i]
+                if timeInterval != 0:
+                    detec[i] = ((timeInterval * 60) ** (-17.8126)) * 7.1825 * (10 ** 57)
             # temp = (-0.0084) * timeInterval * 60 + 12.907
             # detec[i] = 10 ** temp
             # print("color_value[%d] = " %i, color[i], detec[i])
@@ -88,17 +88,17 @@ def analysis(color, sample, detec):
                 # value = "Important"
                 # client.publish("python/test", value)
             # if detec[i] > 1000:
-            #     client.publish("python/test", detec[i])
+            client.publish("python", detec[i])
                 
     anaFile.close()
     return detec
 
 Connected = False   #global variable for the state of the connection
  
-broker_address= "m13.cloudmqtt.com"  #Broker address
-port = 13546                         #Broker port
-user = "cnzndtre"                #Connection username
-password = "kZvTMvF95idF"            #Connection password
+broker_address= "m14.cloudmqtt.com"  #Broker address
+port = 17476                         #Broker port
+user = "fxrzavwa"                #Connection username
+password = "YJvtjXgFgxKP"            #Connection password
  
 client = mqttClient.Client("Python")               #create new instance
 client.username_pw_set(user, password=password)    #set username and password
@@ -109,6 +109,8 @@ client.loop_start()        #start the loop
 
 while Connected != True:    #Wait for connection
     time.sleep(0.1)
+
+client.publish("python/test", "connected")
 
 startTime = int(time.time())
 endTime = int(time.time())
@@ -123,10 +125,10 @@ while True:
     if (endTime - startTime) % 20 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
-        # savingBase = "../image/new2"
+        # savingBase = "../image"
         # fileName = photo()
         # image_bgr = cv2.imread(os.path.join(savingBase, fileName))
-        fileName = "Real/Version_2/opencv-/final_edition.jpg"
+        fileName = "../image/camera Fri Oct 19 17:21:56 2018.jpg"
         image_bgr = cv2.imread(fileName)
         image_rgb = image_bgr[:, :, ::-1]
         # plt.imshow(image_rgb)
