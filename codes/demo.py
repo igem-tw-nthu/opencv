@@ -16,15 +16,19 @@ def on_connect(client, userdata, flags, rc):
         print("Connection failed")
 
 def photo():
-    camera = cv2.VideoCapture(0)
-    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
-    ret, frame = camera.read()
-    savingBase = "../image"
-    fileName = "camera " + str(time.ctime()) + ".jpg"
-    cv2.imwrite(os.path.join(savingBase, fileName), frame)
-    camera.release()
-    return fileName
+    if cv2.VideoCapture.isOpened() == 0:
+        client.publish("Camera not functioning", "python/test")
+        return -1
+    else:
+        camera = cv2.VideoCapture(0)
+        camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
+        ret, frame = camera.read()
+        savingBase = "../image"
+        fileName = "camera " + str(time.ctime()) + ".jpg"
+        cv2.imwrite(os.path.join(savingBase, fileName), frame)
+        camera.release()
+        return fileName
 
 def filter(image):
     blue = green = red = 0
@@ -125,29 +129,30 @@ while True:
     if (endTime - startTime) % 20 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
-        # savingBase = "../image"
-        # fileName = photo()
-        # image_bgr = cv2.imread(os.path.join(savingBase, fileName))
-        fileName = "../image/camera Fri Oct 19 17:21:56 2018.jpg"
-        image_bgr = cv2.imread(fileName)
-        image_rgb = image_bgr[:, :, ::-1]
-        # plt.imshow(image_rgb)
-        # plt.show()
-        # r, g, b = image_rgb[20, 300]
-        # print("位置(20, 300)處的像素 -> 红:%d, 綠:%d, 藍:%d" %(r,g,b))
-        
-        color_value = filter(image_rgb)
-        
-        detec_value = analysis(color_value, sample_value, detec_value)
+        savingBase = "../image"
+        fileName = photo()
+        if fileName != -1:
+            image_bgr = cv2.imread(os.path.join(savingBase, fileName))
+            # fileName = "../image/camera Fri Oct 19 17:21:56 2018.jpg"
+            # image_bgr = cv2.imread(fileName)
+            image_rgb = image_bgr[:, :, ::-1]
+            # plt.imshow(image_rgb)
+            # plt.show()
+            # r, g, b = image_rgb[20, 300]
+            # print("位置(20, 300)處的像素 -> 红:%d, 綠:%d, 藍:%d" %(r,g,b))
+            
+            color_value = filter(image_rgb)
+            
+            detec_value = analysis(color_value, sample_value, detec_value)
 
-        colorFile = open("color_value_ver1.txt", "a")
-        colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
-        k = k + 1
-        for j in range(4):
-            # print("value[%d] = " %j, color_value[j], detec_value[j])
-            colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
-        colorFile.write("\n\n")
-        colorFile.close()
+            colorFile = open("color_value_ver1.txt", "a")
+            colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
+            k = k + 1
+            for j in range(4):
+                # print("value[%d] = " %j, color_value[j], detec_value[j])
+                colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
+            colorFile.write("\n\n")
+            colorFile.close()
         previousTime = endTime
     endTime = int(time.time())
 
@@ -157,4 +162,3 @@ while True:
 
 # Tue Sep  4 08_19_58 2018
 # Tue Sep  4 10_39_58 2018
-
