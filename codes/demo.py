@@ -16,8 +16,8 @@ def on_connect(client, userdata, flags, rc):
         print("Connection failed")
 
 def photo():
-    if cv2.VideoCapture.isOpened() == 0:
-        client.publish("Camera not functioning", "python/test")
+    if cv2.VideoCapture(0).isOpened() == 0:
+        client.publish("python/test", "Camera not functioning")
         return -1
     else:
         camera = cv2.VideoCapture(0)
@@ -70,29 +70,41 @@ def filter(image):
 
 def mvkit(sample, time, start):
     for i in range(4):
-        sample[i] = start + time * i
+        sample[i] = start + time * (i + 1) + 3
     return sample
 
 def analysis(color, sample, detec):
-    anaFile = open("ana_value_ver1.txt", "a")
+    anaFile = open("../record/demo/ana_value_ver1.txt", "a")
     write = 0
+    warn = 0
+    
     for i in range(4):
-        if color[i][0] < 255 and color[i][1] < 200 and color[i][2] < 150:
+        if color[i][0] < 255 and color[i][1] < 200 and color[i][2] < 150 and detec[i] == 0:
+            timeInterval = int(time.time()) - sample[i]
+            detec[i] = ((timeInterval * 60) ** (-17.8126)) * 7.1825 * (10 ** 57)
+            # temp = (-0.0084) * timeInterval * 60 + 12.907
+            # detec[i] = 10 ** temp
+
+    for i in range(4):
+        if detec[i] > 1000:
+            warn = 1
+
+    if warn == 0:
+        for i in range(4):
+            if (order - i) >= 0:
+                client.publish("python/test", detec[order])
+    else:
+        for i in range(4):
             if write == 0:
                 anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
             write = 1
-            if detec[i] == 0:
-                timeInterval = int(time.time()) - sample[i]
-                if timeInterval != 0:
-                    detec[i] = ((timeInterval * 60) ** (-17.8126)) * 7.1825 * (10 ** 57)
-            # temp = (-0.0084) * timeInterval * 60 + 12.907
-            # detec[i] = 10 ** temp
-            # print("color_value[%d] = " %i, color[i], detec[i])
-            anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s, time[%2d] = %s\n" %(i, color[i], i, detec[i], i, timeInterval))
+            if detec[i] > 1000:
+                # print("color_value[%d] = " %i, color[i], detec[i])
+                anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" 
+                              %(i, color[i], i, detec[i]))
                 # value = "Important"
                 # client.publish("python/test", value)
-            # if detec[i] > 1000:
-            client.publish("python", detec[i])
+                client.publish("python", detec[i])
                 
     anaFile.close()
     return detec
@@ -119,14 +131,13 @@ client.publish("python/test", "connected")
 startTime = int(time.time())
 endTime = int(time.time())
 previousTime = endTime - 10
-sample_value = [startTime for i in range(4)]
+sample_value = mvkit(sample_value, 3, startTime)
 detec_value = [0 for i in range(4)]
-sample_value = mvkit(sample_value, 5, startTime)
 i = 0
 k = 0
 n = 0
 while True:
-    if (endTime - startTime) % 20 == 0 and endTime - previousTime > 5:
+    if (endTime - startTime) % 6 == 0 and endTime - previousTime > 5:
         print("write %d" %(n))
         n = n + 1
         savingBase = "../image"
@@ -145,12 +156,13 @@ while True:
             
             detec_value = analysis(color_value, sample_value, detec_value)
 
-            colorFile = open("color_value_ver1.txt", "a")
+            colorFile = open("../record/demo/color_value_ver1.txt", "a")
             colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
             k = k + 1
             for j in range(4):
                 # print("value[%d] = " %j, color_value[j], detec_value[j])
-                colorFile.write("color_value[%2d] = %s, sample_value[%2d] = %s\n" %(j, color_value[j], j, sample_value[j]))
+                colorFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" 
+                                %(j, color_value[j], j, detec_value[j]))
             colorFile.write("\n\n")
             colorFile.close()
         previousTime = endTime
