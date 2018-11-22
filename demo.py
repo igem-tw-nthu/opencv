@@ -24,9 +24,9 @@ def photo():
         camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
         ret, frame = camera.read()
-        savingBase = "../image"
+        savingBase = "image"
         fileName = "camera " + str(time.ctime()) + ".jpg"
-        cv2.imwrite(os.path.join(savingBase, fileName), frame)
+        cv2.imwrite(fileName, frame)
         camera.release()
         return fileName
 
@@ -47,7 +47,7 @@ def filter(image):
                  [684, 687, 692, 695, 695, 691]]
     square_length = 10
     for i in range(4):
-        j = i + 19
+        j = i + 1
         r = j % 6
         c = math.floor(j / 6)
         centerX = positionX[c][r]
@@ -70,43 +70,22 @@ def filter(image):
 
 def mvkit(sample, time, start):
     for i in range(4):
-        sample[i] = start + time * (i + 1) + 3
+        sample[i] = time * i + 16
+    print(sample)
     return sample
 
-def analysis(color, sample, detec):
-    anaFile = open("../record/demo/ana_value_ver1.txt", "a")
-    write = 0
-    warn = 0
-    
+def analysis(color, sample, detec, interval):
     for i in range(4):
         if color[i][0] < 255 and color[i][1] < 200 and color[i][2] < 150 and detec[i] == 0:
-            timeInterval = int(time.time()) - sample[i]
-            detec[i] = ((timeInterval * 60) ** (-17.8126)) * 7.1825 * (10 ** 57)
-            # temp = (-0.0084) * timeInterval * 60 + 12.907
-            # detec[i] = 10 ** temp
-
+            timeInterval = interval - sample[i]
+            print(timeInterval)
+            detec[i] = ((timeInterval * 100) ** (-17.8126)) * 7.1825 * (10 ** 57)
+            detec[i] = round(detec[i], 2)
+    
+    client.publish("python/test", "send")
     for i in range(4):
-        if detec[i] > 1000:
-            warn = 1
-
-    if warn == 0:
-        for i in range(4):
-            if (order - i) >= 0:
-                client.publish("python/test", detec[order])
-    else:
-        for i in range(4):
-            if write == 0:
-                anaFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
-            write = 1
-            if detec[i] > 1000:
-                # print("color_value[%d] = " %i, color[i], detec[i])
-                anaFile.write("color_value[%2d] = %s, detec_value[%2d] = %s\n" 
-                              %(i, color[i], i, detec[i]))
-                # value = "Important"
-                # client.publish("python/test", value)
-                client.publish("python", detec[i])
+        client.publish("python/test", detec[i])
                 
-    anaFile.close()
     return detec
 
 Connected = False   #global variable for the state of the connection
@@ -130,20 +109,22 @@ client.publish("python/test", "connected")
 
 startTime = int(time.time())
 endTime = int(time.time())
+interval = endTime - startTime
 previousTime = endTime - 10
-sample_value = mvkit(sample_value, 3, startTime)
+sample_value = [0 for i in range(4)]
+sample_value = mvkit(sample_value, 1, startTime)
 detec_value = [0 for i in range(4)]
 i = 0
 k = 0
 n = 0
 while True:
-    if (endTime - startTime) % 6 == 0 and endTime - previousTime > 5:
-        print("write %d" %(n))
-        n = n + 1
-        savingBase = "../image"
+    if interval % 30 == 0 and endTime - previousTime > 5:
+        print("write %d" %(k))
+        print(interval)
+        savingBase = "image"
         fileName = photo()
         if fileName != -1:
-            image_bgr = cv2.imread(os.path.join(savingBase, fileName))
+            image_bgr = cv2.imread(fileName)
             # fileName = "../image/camera Fri Oct 19 17:21:56 2018.jpg"
             # image_bgr = cv2.imread(fileName)
             image_rgb = image_bgr[:, :, ::-1]
@@ -154,9 +135,10 @@ while True:
             
             color_value = filter(image_rgb)
             
-            detec_value = analysis(color_value, sample_value, detec_value)
+            if k > 0:
+                detec_value = analysis(color_value, sample_value, detec_value, interval)
 
-            colorFile = open("../record/demo/color_value_ver1.txt", "a")
+            colorFile = open("color_value_ver1.txt", "a")
             colorFile.write("Sample %d  %s\n\n" %(k, str(time.ctime())))
             k = k + 1
             for j in range(4):
@@ -167,6 +149,7 @@ while True:
             colorFile.close()
         previousTime = endTime
     endTime = int(time.time())
+    interval = endTime - startTime
 
 
 

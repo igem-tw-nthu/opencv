@@ -1,0 +1,16 @@
+Sample 0  Thu Nov 22 02:23:39 2018
+
+color_value[ 0] = [254.8, 254.95, 253.21], detec_value[ 0] = 0
+color_value[ 1] = [254.96, 255.0, 253.0], detec_value[ 1] = 0
+color_value[ 2] = [254.99, 254.99, 254.99], detec_value[ 2] = 0
+color_value[ 3] = [255.0, 255.0, 254.96], detec_value[ 3] = 0
+
+
+Sample 1  Thu Nov 22 02:24:09 2018
+
+color_value[ 0] = [254.83, 254.97, 252.84], detec_value[ 0] = 0
+color_value[ 1] = [255.0, 255.0, 253.72], detec_value[ 1] = 0
+color_value[ 2] = [254.98, 254.98, 254.98], detec_value[ 2] = 0
+color_value[ 3] = [255.0, 255.0, 255.0], detec_value[ 3] = 0
+
+
